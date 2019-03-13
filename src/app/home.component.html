@@ -1,0 +1,42 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="alert alert-success col-md-8 offset-2" role="alert">
+      Countdown!
+    </div>
+  </div>
+  <!-- <div class="jumbotron" >
+    <h3 class="display-2">Places visited</h3>
+    <agm-map [latitude]="lat" [longitude]="lng" >
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+  </div> -->
+  <div class="card-deck" style="margin-top: 10px">
+    <div class="card">
+      <img class="card-img-top" src="/assets/images/holiday1.jpg" alt="Card image cap">
+      <div class="card-body">
+        <a [routerLink]="['/current']"><h5 class="card-title">Current trip</h5></a>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+          content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="/assets/images/holiday2.jpg" alt="Card image cap">
+      <div class="card-body">
+        <a [routerLink]="['/current']"><h5 class="card-title">Upcoming trip</h5></a>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="/assets/images/holiday3.jpg" alt="Card image cap">
+      <div class="card-body">
+        <a [routerLink]="['/current']"><h5 class="card-title">Previous trips</h5></a>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+          content. This card has even longer content than the first to show that equal height action.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
