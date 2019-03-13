@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl, ValidatorFn } from '@angular/forms';
-import { debounceTime } from 'rxjs/operators'
+import { debounceTime } from 'rxjs/operators';
 import { EmailValidators } from 'src/app/shared/email-validators';
 import { User } from '../user';
 
@@ -17,23 +17,23 @@ export class UserSignupComponent implements OnInit {
 
   emailMessage: string;
   private validationMessages = {
-    required: "Please enter an email address",
-    email: "Please enter a valid email",
-    minLength: "Must be more than 3 characters"
-  }
+    required: 'Please enter an email address',
+    email: 'Please enter a valid email',
+    minLength: 'Must be more than 3 characters'
+  };
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
     this.userSignupForm = this.fb.group({
-      firstName: ["", [Validators.required, Validators.minLength(3)]],
-      lastName: ["", [Validators.required, Validators.maxLength(50)]],
+      firstName: ['', [Validators.required, Validators.minLength(3)]],
+      lastName: ['', [Validators.required, Validators.maxLength(50)]],
       emailGroup: this.fb.group({
-        email: ["", [Validators.required, Validators.email]],
-        confirmEmail: ["", [Validators.required, Validators.email]],
+        email: ['', [Validators.required, Validators.email]],
+        confirmEmail: ['', [Validators.required, Validators.email]],
       }, { validator: EmailValidators.emailMatch }),
-      password: ["", [Validators.required]]
-    })
+      password: ['', [Validators.required]]
+    });
 
     const emailControl = this.userSignupForm.get('emailGroup.email');
     emailControl.valueChanges.pipe(debounceTime(1000))
@@ -47,4 +47,6 @@ export class UserSignupComponent implements OnInit {
         key => this.emailMessage += this.validationMessages[key]).join('');
     }
   }
+
+  signUp(): void {}
 }

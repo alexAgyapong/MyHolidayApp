@@ -1,9 +1,9 @@
 <div class="card col-md-5 offset-2">
-  <div class="card-header"> 
+  <div class="card-header">
     Sign up for a free account <i class="fa fa-user-plus"></i>
   </div>
   <div class="card-body">
-    <form novalidate [formGroup] ="userSignupForm" (ngSubmit)="signup()">
+    <form novalidate [formGroup] ="userSignupForm" (ngSubmit)="signUp()">
       <div class="form-group">
         <label>First name</label>
         <input class="form-control" formControlName="firstName" placeholder="first name"/>
@@ -25,7 +25,7 @@
           <label>Confirm email</label>
           <input class="form-control" formControlName="confirmEmail" placeholder="confirm email"
           [ngClass]="{'is-invalid': userSignupForm.get('emailGroup').errors?.match}"/>
-        </div> 
+        </div>
       </div>
       <div class="form-group">
         <label>Password</label>
