@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
 import {
   SocialLoginModule,
   AuthServiceConfig,
@@ -20,7 +21,7 @@ import { UpcomingHolidayComponent } from './holidays/upcoming-holiday/upcoming-h
 import { CurrentHolidayComponent } from './holidays/current-holiday/current-holiday.component';
 import { PreviousHolidaysComponent } from './holidays/previous-holidays/previous-holidays.component';
 
-// Configs 
+// Configs
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
       [
@@ -51,6 +52,7 @@ export function getAuthServiceConfigs() {
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     SocialLoginModule,
     AgmCoreModule.forRoot({
